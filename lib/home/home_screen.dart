@@ -14,11 +14,9 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: <Widget>[
         HeaderContent(),
-        ContentMenu(),
+        // ContentMenu(),
         ListDoa(),
-
       ],
     );
-
   }
 }

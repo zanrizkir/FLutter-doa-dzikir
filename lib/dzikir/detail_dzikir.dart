@@ -4,14 +4,16 @@ import 'package:my_dzikir/model/dzikir.dart';
 class DetailDzikir extends StatelessWidget {
   final Dzikir title;
 
-  const DetailDzikir({this.title});
+  const DetailDzikir({required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text(title.title, style: TextStyle(color: Colors.white),
+        title: Text(
+          title.title,
+          style: TextStyle(color: Colors.white),
         ),
         iconTheme: IconThemeData(color: Colors.white),
       ),
@@ -26,31 +28,44 @@ class DetailDzikir extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Container(
-                margin: EdgeInsets.only(left: 20.0,right: 20.0,top: 16.0,bottom: 16.0),
+                margin: EdgeInsets.only(
+                    left: 20.0, right: 20.0, top: 16.0, bottom: 16.0),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children:<Widget> [
+                    children: <Widget>[
                       Text(title.arab,
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30.0,color: Colors.grey[700]),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                              color: Colors.grey[700]),
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.justify),
                       Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: Text(title.latinArab,
+                        child: Text(
+                          title.latinArab,
                           style: TextStyle(color: Colors.grey[500]),
-                          textAlign: TextAlign.center,),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.all(8.0),
-                        child: Text("Artinya :", style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.bold),
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "Artinya :",
+                          style: TextStyle(
+                              color: Colors.grey[700],
+                              fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.all(8.0),
-                        child: Text(title.translate, style: TextStyle(color: Colors.grey[700]),
-                          textAlign: TextAlign.start,),
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          title.translate,
+                          style: TextStyle(color: Colors.grey[700]),
+                          textAlign: TextAlign.start,
+                        ),
                       )
                     ],
                   ),

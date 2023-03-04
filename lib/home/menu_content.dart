@@ -5,22 +5,21 @@ import 'package:my_dzikir/dzikir/content_dzikir.dart';
 import 'package:my_dzikir/utils/custom_widget.dart';
 
 class ContentMenu extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children:<Widget> [
+        children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(right: 18.0,left: 18.0,top: 18.0),
+            padding: EdgeInsets.only(right: 18.0, left: 18.0, top: 18.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children:<Widget> [
-                Text('Pilih Aktifitas',
-                    style: styleTitle,
-                    textAlign: TextAlign.left,
-                    ),
-
+              children: <Widget>[
+                Text(
+                  'Pilih Aktifitas',
+                  style: styleTitle,
+                  textAlign: TextAlign.left,
+                ),
               ],
             ),
           ),
@@ -29,39 +28,45 @@ class ContentMenu extends StatelessWidget {
             height: 70.0,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children:<Widget> [
+              children: <Widget>[
                 Expanded(
                   flex: 3,
                   child: Card(
                     elevation: 2,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)
-                    ),
+                        borderRadius: BorderRadius.circular(10.0)),
                     child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.push(context, PageRouteBuilder(
-                            transitionDuration: Duration(seconds: 2),
-                            transitionsBuilder: (context,animation, animationTime,child){
-                              animation = CurvedAnimation(parent: animation, curve: Curves.elasticInOut);
-                              return ScaleTransition(
-                                scale: animation,
-                                alignment: Alignment.center,
-                                child: child,
-                              );
-                            },
-                            pageBuilder: (context,animation,animationTime){
-                              return ContentDzikir();
-                            }));
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                                transitionDuration: Duration(seconds: 2),
+                                transitionsBuilder:
+                                    (context, animation, animationTime, child) {
+                                  animation = CurvedAnimation(
+                                      parent: animation,
+                                      curve: Curves.elasticInOut);
+                                  return ScaleTransition(
+                                    scale: animation,
+                                    alignment: Alignment.center,
+                                    child: child,
+                                  );
+                                },
+                                pageBuilder:
+                                    (context, animation, animationTime) {
+                                  return ContentDzikir();
+                                }));
                       },
                       child: Row(
-                        children:<Widget> [
+                        children: <Widget>[
                           Padding(
-                            padding:  EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Hero(
                                 tag: 'dzikir',
-                                child: Image(image: AssetImage('assets/img/dzikir.png'),width: 30,
-                                )
-                            ),
+                                child: Image(
+                                  image: AssetImage('assets/img/dzikir.png'),
+                                  width: 30,
+                                )),
                           ),
                           Center(
                             child: Padding(
@@ -73,8 +78,11 @@ class ContentMenu extends StatelessWidget {
                                   Text('Dzikir', style: cardTitle),
                                   Container(
                                       margin: EdgeInsets.only(top: 4.0),
-                                      child: Text('Bacaan Tasbih, Tahmid,\nTahlil dan Takbir',
-                                          style: tagLine,maxLines: 2,))
+                                      child: Text(
+                                        'Bacaan Tasbih, Tahmid,\nTahlil dan Takbir',
+                                        style: tagLine,
+                                        maxLines: 2,
+                                      ))
                                 ],
                               ),
                             ),
@@ -89,33 +97,39 @@ class ContentMenu extends StatelessWidget {
                   child: Card(
                     elevation: 2,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)
-                    ),
+                        borderRadius: BorderRadius.circular(10.0)),
                     child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.push(context, PageRouteBuilder(
-                            transitionDuration: Duration(seconds: 2),
-                            transitionsBuilder: (context,animation, animationTime,child){
-                              animation = CurvedAnimation(parent: animation, curve: Curves.elasticInOut);
-                              return ScaleTransition(
-                                scale: animation,
-                                alignment: Alignment.center,
-                                child: child,
-                              );
-                            },
-                            pageBuilder: (context,animation,animationTime){
-                              return AllDoaList();
-                            }));
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                                transitionDuration: Duration(seconds: 2),
+                                transitionsBuilder:
+                                    (context, animation, animationTime, child) {
+                                  animation = CurvedAnimation(
+                                      parent: animation,
+                                      curve: Curves.elasticInOut);
+                                  return ScaleTransition(
+                                    scale: animation,
+                                    alignment: Alignment.center,
+                                    child: child,
+                                  );
+                                },
+                                pageBuilder:
+                                    (context, animation, animationTime) {
+                                  return AllDoaList();
+                                }));
                       },
                       child: Row(
-                        children:<Widget> [
+                        children: <Widget>[
                           Padding(
-                            padding:  EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Hero(
                                 tag: 'doa',
-                                child: Image(image: AssetImage('assets/img/doa.png'),width: 30,
-                                )
-                            ),
+                                child: Image(
+                                  image: AssetImage('assets/img/doa.png'),
+                                  width: 30,
+                                )),
                           ),
                           Center(
                             child: Padding(
@@ -138,7 +152,6 @@ class ContentMenu extends StatelessWidget {
                     ),
                   ),
                 )
-
               ],
             ),
           )
